@@ -67,27 +67,27 @@ Consider the list of lists below containing basketball player information.
 
 ```{r}
 player_info <- list(MJ = list(name = "Michael Jordan",
-                              postion = "shooting guard",
+                              position = "shooting guard",
                               games_played = 179,
                               points = 5987,
                               assists = 1022),
                     LJ = list(name = "LeBron James",
-                              postion = "small forward",
+                              position = "small forward",
                               games_played = 287,
                               points = 8162,
                               assists = 2067),
                     KB = list(name = "Kobe Bryant",
-                              postion = "shooting guard",
+                              position = "shooting guard",
                               games_played = 220,
                               points = 5640,
                               assists = 1040),
                     KA = list(name = "Kareem Abdul-Jabbar",
-                              postion = "center",
+                              position = "center",
                               games_played = 237,
                               points = 5762,
                               assists = 767),
                     SO = list(name = "Shaquille O'Neal",
-                              postion = "center",
+                              position = "center",
                               games_played = 216,
                               points = 5250,
                               assists = 582))
@@ -102,7 +102,12 @@ Extract the value `8162` (LeBron James points) in 2 different ways:
 - using names
 
 ```{r}
+# w/ indexing
+player_info[[2]][4]
 
+# w/ names
+names(player_info)<-c("MJ", "LJ", "KB", "KA", "SO")
+player_info$LJ$points
 ```
 
 
@@ -113,9 +118,14 @@ Add a new named element to the end of each player's list called `height`. The he
 Print the `player_info` list to prove you were successful.
 
 ```{r}
+player_info$MJ$height <- 78
+player_info$LJ$height <- 81
+player_info$KB$height <- 78
+player_info$KA$height <- 86
+player_info$SO$height <- 85
 
+print(player_info)
 ```
-
 
 ### Part c (3 points)
 
@@ -132,7 +142,15 @@ Hint: initialize an empty list
 Note: this must still run correctly even if the values were to change or if another player were added to the list or if the player order changed.
 
 ```{r}
+# calculates the points per game into a list using a function 
+points_per_game <- sapply(player_info, function(player_info){player_info$points/player_info$games_played})
+print(points_per_game)
 
+# name each element with respective player's initials
+for(val in player_info$name){
+  player_info$name$points_game <- points_per_game
+}
+print(player_info)
 ```
 
 
@@ -164,7 +182,9 @@ ie: 91 rounds to 90; 173 rounds to 200; 1450 rounds to 1000
 Hint: use `MARGIN = 1:2` to apply the function to each value instead of only a row/col.
 
 ```{r}
+mat_rounded <- lapply(mat_rand, function(x){
 
+})
 ```
 
 
