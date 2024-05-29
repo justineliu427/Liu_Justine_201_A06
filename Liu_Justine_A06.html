@@ -3166,8 +3166,7 @@ Screenshot/image of RStudio
 [1] 8162</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># w/ names</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(player_info)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;MJ&quot;</span>, <span class="st">&quot;LJ&quot;</span>, <span class="st">&quot;KB&quot;</span>, <span class="st">&quot;KA&quot;</span>, <span class="st">&quot;SO&quot;</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>LJ<span class="sc">$</span>points</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>LJ<span class="sc">$</span>points</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8162</code></pre>
 </div>
@@ -3178,13 +3177,14 @@ Screenshot/image of RStudio
 <p>Add a new named element to the end of each player’s list called <code>height</code>. The heights in inches are as follows: MJ = 78; LJ = 81; KB = 78; KA = 86; SO = 85.</p>
 <p>Print the <code>player_info</code> list to prove you were successful.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>MJ<span class="sc">$</span>height <span class="ot">&lt;-</span> <span class="dv">78</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>LJ<span class="sc">$</span>height <span class="ot">&lt;-</span> <span class="dv">81</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>KB<span class="sc">$</span>height <span class="ot">&lt;-</span> <span class="dv">78</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>KA<span class="sc">$</span>height <span class="ot">&lt;-</span> <span class="dv">86</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>SO<span class="sc">$</span>height <span class="ot">&lt;-</span> <span class="dv">85</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(player_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add the following values into anew list called height</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>MJ<span class="sc">$</span>height <span class="ot">&lt;-</span> <span class="dv">78</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>LJ<span class="sc">$</span>height <span class="ot">&lt;-</span> <span class="dv">81</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>KB<span class="sc">$</span>height <span class="ot">&lt;-</span> <span class="dv">78</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>KA<span class="sc">$</span>height <span class="ot">&lt;-</span> <span class="dv">86</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>player_info<span class="sc">$</span>SO<span class="sc">$</span>height <span class="ot">&lt;-</span> <span class="dv">85</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(player_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$MJ
 $MJ$name
@@ -3298,10 +3298,10 @@ $SO$height
 <p>Hint: initialize an empty list</p>
 <p>Note: this must still run correctly even if the values were to change or if another player were added to the list or if the player order changed.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculates the points per game into a list using a function </span></span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initialize empty list</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>points_per_game <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># name each element with respective player&#39;s initials</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># iterate through the names of each player to calculate the points per game for each player </span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(player <span class="cf">in</span> <span class="fu">names</span>(player_info)){</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  points <span class="ot">&lt;-</span> player_info[[player]]<span class="sc">$</span>points</span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  games_played <span class="ot">&lt;-</span> player_info[[player]]<span class="sc">$</span>games_played</span>
@@ -3350,12 +3350,12 @@ $SO
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>mat_rand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]  213  160  466 1318  491
-[2,]  224   91   18 1196  312
-[3,] 1631 1122   77   86  143
-[4,]   12   45 1844  721 1416
-[5,]  414  258   85 1288 1739
-[6,] 1298 1882   23   53   39</code></pre>
+[1,]  547   42  414 1217 1561
+[2,]   19 1187   66  684   32
+[3,]   49   84 1815 1260  789
+[4,] 1444  905   12   57   20
+[5,] 1007  687 1102 1749  808
+[6,]  821   31  269 1551  978</code></pre>
 </div>
 </div>
 <p>Use an appropriate apply function to round values with 2 digits to the nearest tens, values with 3 digits to the nearest hundreds, and 4 digits to the nearest thousands.</p>
@@ -3363,27 +3363,36 @@ $SO
 <p>Hint: use <code>MARGIN = 1:2</code> to apply the function to each value instead of only a row/col.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mat_rounded <span class="ot">&lt;-</span> <span class="fu">apply</span>(mat_rand, <span class="cf">function</span>(x){</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  num_digits <span class="ot">&lt;-</span> <span class="fu">nchar</span>(<span class="fu">as.character</span>(x))</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (num_digits <span class="sc">==</span> <span class="dv">2</span>) {</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">round</span>(x, <span class="sc">-</span><span class="dv">1</span>))  <span class="co"># round to the nearest tens</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (num_digits <span class="sc">==</span> <span class="dv">3</span>) {</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">round</span>(x, <span class="sc">-</span><span class="dv">2</span>))  <span class="co"># round to the nearest hundreds</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (num_digits <span class="sc">==</span> <span class="dv">4</span>) {</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">round</span>(x, <span class="sc">-</span><span class="dv">3</span>))  <span class="co"># round to the nearest thousands</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(x)  </span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>}, <span class="at">MARGIN =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mat_rounded)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># convert digits into characters so that it&#39;s countable</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  num_digits <span class="ot">&lt;-</span> <span class="fu">nchar</span>(<span class="fu">as.character</span>(x))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (num_digits <span class="sc">==</span> <span class="dv">2</span>) {</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># round to the nearest tens</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">round</span>(x, <span class="sc">-</span><span class="dv">1</span>))  </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (num_digits <span class="sc">==</span> <span class="dv">3</span>) {</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># round to the nearest hundreds</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">round</span>(x, <span class="sc">-</span><span class="dv">2</span>))  </span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (num_digits <span class="sc">==</span> <span class="dv">4</span>) {</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># round to the nearest thousands</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">round</span>(x, <span class="sc">-</span><span class="dv">3</span>)) </span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(x)  </span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>}, <span class="at">MARGIN =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mat_rounded)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]  200  200  500 1000  500
-[2,]  200   90   20 1000  300
-[3,] 2000 1000   80   90  100
-[4,]   10   40 2000  700 1000
-[5,]  400  300   80 1000 2000
-[6,] 1000 2000   20   50   40</code></pre>
+[1,]  500   40  400 1000 2000
+[2,]   20 1000   70  700   30
+[3,]   50   80 2000 1000  800
+[4,] 1000  900   10   60   20
+[5,] 1000  700 1000 2000  800
+[6,]  800   30  300 2000 1000</code></pre>
 </div>
 </div>
 </section>
@@ -3468,16 +3477,25 @@ $SO
 <p>Example: The number 312 would return 6 (3 + 1 + 2)</p>
 <p>Run your function with 935068.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>digit_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n <span class="sc">&lt;</span> <span class="dv">10</span>) {</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(n)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    last_digit <span class="ot">&lt;-</span> n <span class="sc">%%</span> <span class="dv">10</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    remaining <span class="ot">&lt;-</span> n <span class="sc">%/%</span> <span class="dv">10</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(last_digit <span class="sc">+</span> <span class="fu">digit_sum</span>(remaining))</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="fu">digit_sum</span>(<span class="dv">935068</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>digit_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return the digit if it is only single digit </span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n <span class="sc">&lt;</span> <span class="dv">10</span>) {</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(n)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># grabs the last digit</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    last_digit <span class="ot">&lt;-</span> n <span class="sc">%%</span> <span class="dv">10</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># grabs the remaining digits</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    remaining <span class="ot">&lt;-</span> n <span class="sc">%/%</span> <span class="dv">10</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># adds the last digit with the remaining digits</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(last_digit <span class="sc">+</span> <span class="fu">digit_sum</span>(remaining))</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="fu">digit_sum</span>(<span class="dv">935068</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 31</code></pre>
 </div>

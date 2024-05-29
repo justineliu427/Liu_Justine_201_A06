@@ -106,7 +106,6 @@ Extract the value `8162` (LeBron James points) in 2 different ways:
 player_info[[2]][4]
 
 # w/ names
-names(player_info)<-c("MJ", "LJ", "KB", "KA", "SO")
 player_info$LJ$points
 ```
 
@@ -118,6 +117,7 @@ Add a new named element to the end of each player's list called `height`. The he
 Print the `player_info` list to prove you were successful.
 
 ```{r}
+# add the following values into anew list called height
 player_info$MJ$height <- 78
 player_info$LJ$height <- 81
 player_info$KB$height <- 78
@@ -142,10 +142,10 @@ Hint: initialize an empty list
 Note: this must still run correctly even if the values were to change or if another player were added to the list or if the player order changed.
 
 ```{r}
-# calculates the points per game into a list using a function 
+# initialize empty list
 points_per_game <- list()
 
-# name each element with respective player's initials
+# iterate through the names of each player to calculate the points per game for each player 
 for(player in names(player_info)){
   points <- player_info[[player]]$points
   games_played <- player_info[[player]]$games_played
@@ -187,13 +187,22 @@ Hint: use `MARGIN = 1:2` to apply the function to each value instead of only a r
 
 ```{r}
 mat_rounded <- apply(mat_rand, function(x){
+
+  # convert digits into characters so that it's countable
   num_digits <- nchar(as.character(x))
+
   if (num_digits == 2) {
-    return(round(x, -1))  # round to the nearest tens
+
+    # round to the nearest tens
+    return(round(x, -1))  
   } else if (num_digits == 3) {
-    return(round(x, -2))  # round to the nearest hundreds
+
+    # round to the nearest hundreds
+    return(round(x, -2))  
   } else if (num_digits == 4) {
-    return(round(x, -3))  # round to the nearest thousands
+
+    # round to the nearest thousands
+    return(round(x, -3)) 
   } else {
     return(x)  
   }
@@ -291,15 +300,24 @@ Example: The number 312 would return 6 (3 + 1 + 2)
 Run your function with 935068.
 
 ```{r}
+# 
 digit_sum <- function(n){
+
+  # return the digit if it is only single digit 
   if (n < 10) {
     return(n)
   } else {
+    # grabs the last digit
     last_digit <- n %% 10
+    
+    # grabs the remaining digits
     remaining <- n %/% 10
+
+    # adds the last digit with the remaining digits
     return(last_digit + digit_sum(remaining))
   }
 }
+
 digit_sum(935068)
 ```
 
