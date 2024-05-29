@@ -3350,12 +3350,12 @@ $SO
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>mat_rand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]  895   55  902 1062   93
-[2,]   80  385 1125 1889   94
-[3,] 1264 1384   68   89   88
-[4,]  236 1801  407   44 1773
-[5,] 1322 1918   38   24  673
-[6,]  559  184 1401  112  698</code></pre>
+[1,]  213  160  466 1318  491
+[2,]  224   91   18 1196  312
+[3,] 1631 1122   77   86  143
+[4,]   12   45 1844  721 1416
+[5,]  414  258   85 1288 1739
+[6,] 1298 1882   23   53   39</code></pre>
 </div>
 </div>
 <p>Use an appropriate apply function to round values with 2 digits to the nearest tens, values with 3 digits to the nearest hundreds, and 4 digits to the nearest thousands.</p>
@@ -3378,12 +3378,12 @@ $SO
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mat_rounded)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]  900   60  900 1000   90
-[2,]   80  400 1000 2000   90
-[3,] 1000 1000   70   90   90
-[4,]  200 2000  400   40 2000
-[5,] 1000 2000   40   20  700
-[6,]  600  200 1000  100  700</code></pre>
+[1,]  200  200  500 1000  500
+[2,]  200   90   20 1000  300
+[3,] 2000 1000   80   90  100
+[4,]   10   40 2000  700 1000
+[5,]  400  300   80 1000 2000
+[6,] 1000 2000   20   50   40</code></pre>
 </div>
 </div>
 </section>
@@ -3467,6 +3467,21 @@ $SO
 <p>Write a recursive function that calculates the sum of the digits in a number.</p>
 <p>Example: The number 312 would return 6 (3 + 1 + 2)</p>
 <p>Run your function with 935068.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>digit_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n <span class="sc">&lt;</span> <span class="dv">10</span>) {</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(n)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    last_digit <span class="ot">&lt;-</span> n <span class="sc">%%</span> <span class="dv">10</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    remaining <span class="ot">&lt;-</span> n <span class="sc">%/%</span> <span class="dv">10</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(last_digit <span class="sc">+</span> <span class="fu">digit_sum</span>(remaining))</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="fu">digit_sum</span>(<span class="dv">935068</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 31</code></pre>
+</div>
+</div>
 </section>
 </section>
 

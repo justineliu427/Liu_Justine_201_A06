@@ -291,6 +291,15 @@ Example: The number 312 would return 6 (3 + 1 + 2)
 Run your function with 935068.
 
 ```{r}
-
+digit_sum <- function(n){
+  if (n < 10) {
+    return(n)
+  } else {
+    last_digit <- n %% 10
+    remaining <- n %/% 10
+    return(last_digit + digit_sum(remaining))
+  }
+}
+digit_sum(935068)
 ```
 
