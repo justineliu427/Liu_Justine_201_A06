@@ -223,7 +223,12 @@ max_temps <- read_tsv("state_max_temps.tsv") |>
 Calculate the average temperature for each month across the whole data frame (using the data for all three states together).
 
 ```{r}
+# remove first two columns
+temp_vals <- max_temps[, -c(1, 2)]
 
+# apply the mean function to the rest of the columns
+avg_temp <- apply(temp_vals, 2, mean)
+print(avg_temp)
 ```
 
 
@@ -238,7 +243,11 @@ Create three new data frames by slicing the data by state.
 No need to print any output here.
 
 ```{r}
+co_temps <- max_temps[max_temps$state == "CO",]
 
+oh_temps <- max_temps[max_temps$state == "OH",]
+
+va_temps <- max_temps[max_temps$state == "VA",]
 ```
 
 
@@ -259,7 +268,17 @@ Example (this is NOT the answer just an example of what goes in the {}):
 Note: This code should still run successfully even if the numbers were to change.
 
 ```{r}
+# neglect the first two columns
+temp_vals <- co_temps[, -c(1,2)]
 
+#take median of each row (year)
+median_annual<-apply(temp_vals, 1, median)
+
+# find the year indices with the maximum and minimum median temps 
+max_med_year <- which.max(median_annual)
+min_med_year <- which.min(median_annual)
+
+print(paste0("The maximum median annual temperature of ", median_annual[max_med_year], " occurred in ", max_med_year, " and the minimum median annual temperature of ", median_annual[min_med_year], " occurred in ", min_med_year, "."))
 ```
 
 
