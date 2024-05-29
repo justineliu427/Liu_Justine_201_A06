@@ -143,14 +143,16 @@ Note: this must still run correctly even if the values were to change or if anot
 
 ```{r}
 # calculates the points per game into a list using a function 
-points_per_game <- sapply(player_info, function(player_info){player_info$points/player_info$games_played})
-print(points_per_game)
+points_per_game <- list()
 
 # name each element with respective player's initials
-for(val in player_info$name){
-  player_info$name$points_game <- points_per_game
+for(player in names(player_info)){
+  points <- player_info[[player]]$points
+  games_played <- player_info[[player]]$games_played
+  points_per_game[[player]] <- points/games_played
 }
-print(player_info)
+print(points_per_game)
+
 ```
 
 
@@ -161,7 +163,8 @@ Use the list created in Part c and an appropriate apply function to round each v
 Store the output as a vector and print the results.
 
 ```{r}
-
+points_per_game <- sapply(points_per_game, function(x){round(x, 2)})
+points_per_game
 ```
 
 
@@ -173,6 +176,7 @@ Consider the matrix `mat_rand` of random numbers below.
 rand_num <- c(sample(10:100, 10), sample(100:999, 10), sample(1000:2000, 10))
 
 mat_rand <- matrix(sample(rand_num, 30), ncol = 5)
+mat_rand
 ```
 
 Use an appropriate apply function to round values with 2 digits to the nearest tens, values with 3 digits to the nearest hundreds, and 4 digits to the nearest thousands.
@@ -182,9 +186,20 @@ ie: 91 rounds to 90; 173 rounds to 200; 1450 rounds to 1000
 Hint: use `MARGIN = 1:2` to apply the function to each value instead of only a row/col.
 
 ```{r}
-mat_rounded <- lapply(mat_rand, function(x){
+mat_rounded <- apply(mat_rand, function(x){
+  num_digits <- nchar(as.character(x))
+  if (num_digits == 2) {
+    return(round(x, -1))  # round to the nearest tens
+  } else if (num_digits == 3) {
+    return(round(x, -2))  # round to the nearest hundreds
+  } else if (num_digits == 4) {
+    return(round(x, -3))  # round to the nearest thousands
+  } else {
+    return(x)  
+  }
+}, MARGIN = 1:2)
 
-})
+print(mat_rounded)
 ```
 
 
