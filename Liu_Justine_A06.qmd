@@ -284,10 +284,14 @@ temp_vals <- co_temps[, -c(1,2)]
 median_annual<-apply(temp_vals, 1, median)
 
 # find the year indices with the maximum and minimum median temps 
-max_med_year <- which.max(median_annual)
-min_med_year <- which.min(median_annual)
+max_year_index <- which.max(median_annual)
+min_year_index <- which.min(median_annual)
 
-print(paste0("The maximum median annual temperature of ", median_annual[max_med_year], " occurred in ", max_med_year, " and the minimum median annual temperature of ", median_annual[min_med_year], " occurred in ", min_med_year, "."))
+# find the year at the indices
+max_year <- co_temps[max_year_index, "year"]
+min_year <- co_temps[min_year_index, "year"]
+
+print(paste0("The maximum median annual temperature of ", median_annual[max_med_year], " occurred in ", max_year, " and the minimum median annual temperature of ", median_annual[min_med_year], " occurred in ", min_year, "."))
 ```
 
 
