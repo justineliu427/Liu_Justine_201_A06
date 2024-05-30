@@ -291,7 +291,7 @@ min_year_index <- which.min(median_annual)
 max_year <- co_temps[max_year_index, "year"]
 min_year <- co_temps[min_year_index, "year"]
 
-print(paste0("The maximum median annual temperature of ", median_annual[max_med_year], " occurred in ", max_year, " and the minimum median annual temperature of ", median_annual[min_med_year], " occurred in ", min_year, "."))
+print(paste0("The maximum median annual temperature of ", median_annual[max_year_index], " occurred in ", max_year, " and the minimum median annual temperature of ", median_annual[min_year_index], " occurred in ", min_year, "."))
 ```
 
 
